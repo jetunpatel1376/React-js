@@ -41,38 +41,38 @@ function Form() {
 
   return (
     <>
-      <div className="main">
-        <div className="form-container">
-          <form className="weather-form" onSubmit={handleSubmit}>
+      <div className="main flex flex-col items-center justify-center min-h-screen bg-gray-100">
+        <div className="form-container mb-8">
+          <form className="weather-form flex space-x-4" onSubmit={handleSubmit}>
             <input
-              className="location-input"
+              className="location-input px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
               type="text"
               value={Location}
               onChange={(e) => setLocation(e.target.value)}
               placeholder="Enter location"
             />
-            <button className="submit-button" type="submit">
+            <button className="submit-button px-4 py-2 bg-purple-500 text-white rounded-md shadow-md hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500" type="submit">
               Search
             </button>
           </form>
         </div>
-        <div className="box-border h-30 w-32 p-4 border-4 bg-[#e879f9] text-white" >
+        <div className="box-border h-30 w-50 p-4 border-4 bg-purple-500 text-white rounded-lg shadow-lg flex flex-col items-center justify-center">
           {watherData ? (
             <>
               <img
-                className="weather-icon"
+                className="weather-icon w-18 h-18 mx-auto mb-4"
                 src={watherData.icon}
                 alt="weather_icon"
               />
-              <h3 className="weather-text">{watherData.text}</h3>
-              <h2 className="temp-c">{watherData.temp_c}°C</h2>
-              <h2 className="location-name">{watherData.name}</h2>
-              <h3 className="region">{watherData.region}</h3>
-              <h3 className="country">{watherData.country}</h3>
-              <h2 className="humidity">Humidity: {watherData.humidity}%</h2>
+              <h3 className="weather-text text-xl font-semibold">{watherData.text}</h3>
+              <h2 className="temp-c text-2xl font-bold">{watherData.temp_c}°C</h2>
+              <h2 className="location-name text-xl">{watherData.name}</h2>
+              <h3 className="region text-md">{watherData.region}</h3>
+              <h3 className="country text-md">{watherData.country}</h3>
+              <h2 className="humidity text-md">Humidity: {watherData.humidity}%</h2>
             </>
           ) : (
-            <p className="loading-text">Loading...</p> // Display a loading message while fetching data
+            <p className="loading-text text-lg">Loading...</p>
           )}
         </div>
       </div>
