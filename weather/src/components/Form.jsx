@@ -1,9 +1,9 @@
 import { useState } from "react";
 function Form() {
   const [Location, setLocation] = useState("");
-  const [watherData, setWatherData] = useState(null); // Initial state changed to null
+  const [watherData, setWatherData] = useState(null); 
 
-  // Function to fetch data
+
   async function getData(location) {
     try {
       const response = await fetch(
