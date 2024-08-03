@@ -17,15 +17,9 @@ function Form() {
         humidity: data.current.humidity,
         temp_c: data.current.temp_c,
         temp_f: data.current.temp_f,
-        wind_kph: data.current.wind_kph,
-        wind_mph: data.current.wind_mph,
-        wind_degree: data.current.wind_degree,
-        wind_direction: data.current.wind_dir,
         country: data.location.country,
         region: data.location.region,
         name: data.location.name,
-        lat: data.location.lat,
-        lon: data.location.lon,
       });
     } catch (e) {
       console.log(e);
@@ -37,6 +31,7 @@ function Form() {
     e.preventDefault();
     console.log(Location);
     getData(Location);
+    setLocation("");
   }
 
   return (
